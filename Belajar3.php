@@ -37,13 +37,17 @@ else if($waktu >=date(10.00 ) && $waktu <=date(15.00))
 {
     echo $waktu,"Siang hari";
 }
-else if($waktu >=date(15.00 ) && $waktu <=date(18.00))
+else if($waktu >=date(15.00 ) && $waktu <=date(17.30))
 {
     echo $waktu,"Sore hari";
 }
-else if($waktu >=date(18.00 ) && $waktu <=date(00.00))
+else if($waktu >=date(17.30 ) && $waktu <=date(18.30))
 {
-    echo $waktu,"Pagi hari";
+    echo $waktu,"Petang";
+}
+else if($waktu >=date(18.30) && $waktu <=date(24.00))
+{
+    echo $waktu,"Malam";
 }
 else
 {

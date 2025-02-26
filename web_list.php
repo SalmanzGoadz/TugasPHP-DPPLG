@@ -35,6 +35,10 @@
             padding: 10px;
             border-radius: 5px;
         }
+
+        li:hover {
+            background-color: gray;
+        }
         .php{
             text-align: center;
             font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -43,9 +47,10 @@
             padding: 10px;
             margin: 5px;
             color: #e3e3e3;
-            
-            
-        }
+            }
+            .php:hover{
+                background-color:rgb(0, 0, 0);
+            }
         footer{
             text-align: center;
             margin-top:5px;
@@ -72,21 +77,21 @@
             <li>17:45 - 18:05 → Ke masjid dan sholat</li>
             <li>18:05 - 18:45 → Makan malam</li>
             <li>18:45 - 19:15 → Sholat Isya</li>
-            <li>19:15 - 21:15 → Belajar</li>
+            <li>19:15 - 21:15 → Belajar/Buat Tugas</li>
             <li>21:15 - 21:45 → Berbincang dengan keluarga</li>
             <li>21:45 - 04.00 → Tidur</li>
         </ul>
 <div class="php">
 <?php
 
-$waktu=date("00.15");
+$waktu=date("21.50");
 
 $sekolah=true;
-$tugas=false;
-$hafalan=true;
+$tugas=true;
+$hafalan=false;
 $belanja=true;
 $chatting=true;
-$hiburan=true;
+$hiburan=false;
 
 // bangun
 if ($waktu ==date(04.00) && $waktu <date (04.15)) {
@@ -103,28 +108,28 @@ else {
 // subuh end
 }
 // siap siap
-if ($waktu >=date( "04:30") && $waktu <=date("05:30")) {
+if ($waktu >=date( 04.30) && $waktu <=date(05.30)) {
     echo $waktu . " - Mandi dan persiapan serta sarapan";
 }
 else {
 // siap siap end
 }
 // berangkat
-if ($waktu >=date("05.30")&& $waktu <= ("06.00")) {
+if ($waktu >=date(05.30)&& $waktu <= (06.00)) {
     echo $waktu," - Berangkat Sekolah";
 }
 else {
 // berangkat end
 }
 // ngobrol
-if ($waktu >=date("06.00") && $waktu < date(07.00)) {
+if ($waktu >=date(06.00) && $waktu < date(07.00)) {
     echo $waktu," - Ngobrol dengan teman sekolah";
 }
 else {
     // ngobrol end
 }
 // pelajaran
-if ($waktu >=date("07.00") && $waktu < date("15.30")) {
+if ($waktu >=date(07.00) && $waktu < date(15.30)) {
    if ($sekolah) {
     echo $waktu," - Pelajaran"; 
    }
@@ -134,38 +139,38 @@ if ($waktu >=date("07.00") && $waktu < date("15.30")) {
 }
 // sekolah end
 // pulang
-if ($waktu >=date("15.30") && $waktu < date("15.45")) {
+if ($waktu >=date(15.30) && $waktu < date(15.45)) {
     echo $waktu," - Pulang Sekolah";
 }
 else {
     // pulang end
 }
 // mandi
-if ($waktu >=date("15.45") && $waktu < date("16.00")) {
+if ($waktu >=date(15.45) && $waktu < date(16.00)) {
 echo $waktu," - Mandi";
 }
 else {
     // mandi end
 }
 // ngaji
-if ($waktu >=date("16.00") && $waktu < date("16.30")) {
+if ($waktu >=date(16.00) && $waktu < date(16.30)) {
     echo $waktu," - Ngaji";
 }
 else {
     // ngaji end
 }
 // hafalan
-if ($waktu >=date("16.30") && $waktu < date("17.00")) {
+if ($waktu >=date(16.30) && $waktu < date(17.00)) {
     if ($hafalan) {
         echo $waktu," - Hafalan Dialog";
     }
 else{
-        echo $waktu," - Main";
+        echo $waktu," - Nonton Anime";
     }
 }    
 // h end
 // bumbu
-if ($waktu >=date("17.00") && $waktu < date(17.15)) {
+if ($waktu >=date(17.00) && $waktu < date(17.15)) {
     if ($belanja) {
         echo $waktu," - Beli Bumbu";
     }
@@ -175,7 +180,7 @@ if ($waktu >=date("17.00") && $waktu < date(17.15)) {
 }
 // bumbu end
 // chat
-if ($waktu >=date("17.15") && $waktu < date(17.45)) {
+if ($waktu >=date(17.15) && $waktu < date(17.45)) {
     if ($chatting) {
         echo $waktu," - Chating Raya";
     }
@@ -185,55 +190,55 @@ if ($waktu >=date("17.15") && $waktu < date(17.45)) {
 } 
 //chat end
 // solat
-if($waktu >=date("17.45") && $waktu < date(18.05)) {
+if($waktu >=date(17.45) && $waktu < date(18.05)) {
     echo $waktu," - Solat Magrib";}
     else{
         // solat end
     }
 // makan
-if ($waktu >=date("18,05") &&   $waktu < date(18.45)) {
+if ($waktu >=date(18.05) &&   $waktu < date(18.45)) {
     echo $waktu,"- Makan Bersama Keluarga";}
     else {
         // makan end
     } 
 //isya
-if ($waktu >=date("18.45") && $waktu < date("19.15")) {
+if ($waktu >=date(18.45) && $waktu < date(19.15)) {
     echo $waktu," - Solat Isya";
 }
 else {
     // isya end
 }
 // belajar
-if ($waktu >=date("19.15") && $waktu < date("21.15")) {
+if ($waktu >=date(19.15) && $waktu < date(21.15)) {
     if ($tugas){
     echo $waktu," - Buat Tugas";}
-    elseif ($waktu >=date("19.15") && $waktu < date("19.45")) {
+    elseif ($waktu >=date(19.15) && $waktu < date(19.45)) {
     echo $waktu," - Ngobrol With Family";}
     else {
         // belajar end
     }
 }
 //ngobrol primer
-if ($waktu >=date("19.45") && $waktu < date("21.45")) {
+if ($waktu >=date(19.45) && $waktu < date(21.45)) {
     if ($hiburan){
         echo $waktu," - Main Game";}
-        elseif ($waktu >=date("21.15") && $waktu < date("21.45")) {
+        elseif ($waktu >=date(21.15) && $waktu < date(21.45)) {
             echo $waktu," - Ngobrol With Family";}
             else {
                 // end
             }
         }
         //    nyiapin jadwal
-if ($waktu >=date("21.45") && $waktu < date("22.00")) {
+if ($waktu >=date(21.45) && $waktu < date(22.00)) {
     echo $waktu," - Nyiapin Jadwal dan Cuci Muka";
 }
 else {
     // nyiapin jadwal end
 }
 // turu
-if ($waktu >=date("22.00") && $waktu < date("23.59")) {
+if ($waktu >=date(22.00) && $waktu < date(23.59)) {
     echo $waktu," - Turu";}
-   elseif ($waktu >=date("00.00") && $waktu < date(03.59))
+   elseif ($waktu >=date(00.00) && $waktu < date(03.59))
 {
     echo $waktu," - turu";
 }
